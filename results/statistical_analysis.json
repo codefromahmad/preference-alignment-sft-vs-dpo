@@ -1,0 +1,137 @@
+{
+  "bootstrap_resamples": 10000,
+  "bootstrap_seed": 42,
+  "input_files": {
+    "Base": "results/base_preference_eval.csv",
+    "DPO": "results/dpo_preference_eval.csv",
+    "SFT": "results/sft_preference_eval.csv"
+  },
+  "models": {
+    "Base": {
+      "correct": 539,
+      "evaluated_pairs": 1000,
+      "mean_preference_margin": 0.06289382609724999,
+      "median_preference_margin": 0.05519604682922363,
+      "preference_accuracy": 0.539,
+      "preference_accuracy_percent": 53.9
+    },
+    "DPO": {
+      "correct": 539,
+      "evaluated_pairs": 1000,
+      "mean_preference_margin": 0.0664044993519783,
+      "median_preference_margin": 0.05653876066207886,
+      "preference_accuracy": 0.539,
+      "preference_accuracy_percent": 53.9
+    },
+    "SFT": {
+      "correct": 544,
+      "evaluated_pairs": 1000,
+      "mean_preference_margin": 0.06111675564944744,
+      "median_preference_margin": 0.06296300888061523,
+      "preference_accuracy": 0.544,
+      "preference_accuracy_percent": 54.4
+    }
+  },
+  "paired_comparisons": {
+    "Base_vs_DPO": {
+      "a_correct_b_wrong": 3,
+      "a_wrong_b_correct": 3,
+      "accuracy_difference_bootstrap_95_ci": {
+        "lower": -0.005,
+        "resamples": 10000,
+        "seed": 42,
+        "upper": 0.005
+      },
+      "direction": "DPO minus Base",
+      "discordant_pairs": 6,
+      "margin_difference_bootstrap_95_ci": {
+        "lower": 0.0021924269393086434,
+        "resamples": 10000,
+        "seed": 42,
+        "upper": 0.004877493951469658
+      },
+      "mcnemar_exact_two_sided_p_value": 1.0,
+      "mean_paired_preference_margin_difference": 0.003510673254728317,
+      "model_a": "Base",
+      "model_b": "DPO",
+      "paired_accuracy_difference": 0.0,
+      "paired_accuracy_difference_percentage_points": 0.0,
+      "wilcoxon_signed_rank_margin_difference": {
+        "method": "normal approximation with tie-aware average ranks",
+        "n_nonzero": 996,
+        "p_value": 3.330380199787523e-07,
+        "statistic": 201907.0,
+        "w_minus": 201907.0,
+        "w_plus": 294599.0,
+        "z": 5.103721652720567
+      }
+    },
+    "Base_vs_SFT": {
+      "a_correct_b_wrong": 53,
+      "a_wrong_b_correct": 58,
+      "accuracy_difference_bootstrap_95_ci": {
+        "lower": -0.016,
+        "resamples": 10000,
+        "seed": 42,
+        "upper": 0.026
+      },
+      "direction": "SFT minus Base",
+      "discordant_pairs": 111,
+      "margin_difference_bootstrap_95_ci": {
+        "lower": -0.018466972725093365,
+        "resamples": 10000,
+        "seed": 42,
+        "upper": 0.015124626635760067
+      },
+      "mcnemar_exact_two_sided_p_value": 0.7043793154248917,
+      "mean_paired_preference_margin_difference": -0.0017770704478025437,
+      "model_a": "Base",
+      "model_b": "SFT",
+      "paired_accuracy_difference": 0.005,
+      "paired_accuracy_difference_percentage_points": 0.5,
+      "wilcoxon_signed_rank_margin_difference": {
+        "method": "normal approximation with tie-aware average ranks",
+        "n_nonzero": 996,
+        "p_value": 0.7945252325850716,
+        "statistic": 245888.0,
+        "w_minus": 250618.0,
+        "w_plus": 245888.0,
+        "z": -0.2604389096941298
+      }
+    },
+    "SFT_vs_DPO": {
+      "a_correct_b_wrong": 58,
+      "a_wrong_b_correct": 53,
+      "accuracy_difference_bootstrap_95_ci": {
+        "lower": -0.026,
+        "resamples": 10000,
+        "seed": 42,
+        "upper": 0.015
+      },
+      "direction": "DPO minus SFT",
+      "discordant_pairs": 111,
+      "margin_difference_bootstrap_95_ci": {
+        "lower": -0.011814636466652154,
+        "resamples": 10000,
+        "seed": 42,
+        "upper": 0.022290140688046793
+      },
+      "mcnemar_exact_two_sided_p_value": 0.7043793154248917,
+      "mean_paired_preference_margin_difference": 0.005287743702530861,
+      "model_a": "SFT",
+      "model_b": "DPO",
+      "paired_accuracy_difference": -0.005,
+      "paired_accuracy_difference_percentage_points": -0.5,
+      "wilcoxon_signed_rank_margin_difference": {
+        "method": "normal approximation with tie-aware average ranks",
+        "n_nonzero": 996,
+        "p_value": 0.5486893335907413,
+        "statistic": 242807.0,
+        "w_minus": 242807.0,
+        "w_plus": 253699.0,
+        "z": 0.5997252858855052
+      }
+    }
+  },
+  "paired_source_index_count": 1000
+}
