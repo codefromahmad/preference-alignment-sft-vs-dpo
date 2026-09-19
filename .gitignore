@@ -19,3 +19,15 @@ paper/
 
 # University term-paper guidelines - local reference only
 written-assignment-main/
+# OS / Python / notebook local artifacts
+.DS_Store
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Generated model checkpoints and local training outputs
+models/
+sft_model/
+smollm2_sft*/
+smollm2_dpo*/
+checkpoints/
